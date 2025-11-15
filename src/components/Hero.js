@@ -25,7 +25,7 @@ const Hero = () => {
                 <span className="vscode-keyword">const</span> <span className="vscode-variable">about</span> = {'{'}
               </div>
               <div className="vscode-line indent">
-                <span className="vscode-property">name</span>: <span className="vscode-string">'Jose Dario Gutierrez Gouveia'</span>,
+                <span className="vscode-property">name</span>: <span className="vscode-string">'Jose Dario Gutierrez de Gouveia'</span>,
               </div>
               <div className="vscode-line indent">
                 <span className="vscode-property">role</span>: <span className="vscode-string">'Developer'</span>,
