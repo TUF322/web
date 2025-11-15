@@ -24,6 +24,29 @@ A aplicação estará disponível em [http://localhost:3000](http://localhost:30
 npm run build
 ```
 
+### Deploy para GitHub Pages
+
+1. **Instalar dependências de deploy:**
+```bash
+npm install
+```
+
+2. **Configurar o repositório no GitHub:**
+   - Crie um repositório no GitHub (ex: `web` ou `portfolio`)
+   - Se o nome do repositório for diferente de `web`, atualize o campo `homepage` no `package.json`
+
+3. **Fazer deploy:**
+```bash
+npm run deploy
+```
+
+Isso irá:
+- Fazer o build do projeto
+- Criar/atualizar o branch `gh-pages` no GitHub
+- Publicar o site em `https://TUF322.github.io/web`
+
+**Nota:** Se o nome do repositório for diferente, atualize a URL no campo `homepage` do `package.json` antes de fazer o deploy.
+
 ## 📝 Personalização
 
 ### Adicionar Seus Projetos
