@@ -1,38 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #000000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'DotMatrix', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+::-webkit-scrollbar-track {
+  background: #000000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+::-webkit-scrollbar-thumb {
+  background: #d501ff;
+  border: 1px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff00ff;
+}
+
+/* Section spacing */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Button styles - global */
+.btn {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: normal;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'DotMatrix', 'Courier New', monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.btn::before {
+  content: '> ';
+  color: #d501ff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary {
+  border-color: #d501ff;
+  color: #d501ff;
+}
+
+.btn-primary::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  background: #d501ff;
+  color: #000000;
+  border-color: #d501ff;
+}
+
+.btn-primary:hover::before {
+  color: #000000;
+}
+
+.btn-secondary {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.btn-secondary:hover::before {
+  opacity: 1;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
   }
 }

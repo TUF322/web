@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Portfolio Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio pessoal criado com React para exibir seus projetos e habilidades.
 
-## Available Scripts
+## 🚀 Como Usar
 
-In the project directory, you can run:
+### Instalação
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Executar em Desenvolvimento
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm start
+```
 
-### `npm test`
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Build para Produção
 
-### `npm run build`
+```bash
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📝 Personalização
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Adicionar Seus Projetos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Edite o arquivo `src/components/Projects.js` e modifique o array `projects` com seus próprios projetos:
 
-### `npm run eject`
+```javascript
+const projects = [
+  {
+    id: 1,
+    title: 'Nome do Projeto',
+    description: 'Descrição do projeto...',
+    technologies: ['React', 'CSS', 'JavaScript'],
+    link: 'https://seu-projeto.com',
+    github: 'https://github.com/seu-usuario/projeto'
+  },
+  // Adicione mais projetos aqui
+];
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Personalizar Informações Pessoais
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Hero Section**: Edite `src/components/Hero.js`
+- **Sobre Mim**: Edite `src/components/About.js`
+- **Habilidades**: Modifique o array `skills` em `src/components/About.js`
+- **Contacto**: Atualize o email em `src/components/Contact.js` e configure o backend para o formulário
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Cores e Estilos
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Os estilos principais estão nos arquivos CSS de cada componente. A paleta de cores principal usa:
+- Gradiente: `#667eea` → `#764ba2`
+- Fundo: `#0a0a0a`
+- Texto: `#e0e0e0`
 
-## Learn More
+## 📁 Estrutura
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+src/
+├── components/
+│   ├── Header.js       # Navegação
+│   ├── Hero.js         # Seção inicial
+│   ├── About.js        # Sobre mim
+│   ├── Projects.js     # Projetos
+│   ├── Contact.js      # Formulário de contacto
+│   └── Footer.js       # Rodapé
+├── App.js
+└── index.js
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎨 Características
 
-### Code Splitting
+- ✅ Design moderno e responsivo
+- ✅ Animações suaves
+- ✅ Navegação suave entre seções
+- ✅ Formulário de contacto
+- ✅ Suporte a links de projetos e GitHub
+- ✅ Otimizado para mobile
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📄 Licença
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este projeto é pessoal e livre para uso e modificação.

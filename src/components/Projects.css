@@ -1,0 +1,149 @@
+.projects {
+  background: #000000;
+  position: relative;
+  border-top: 1px solid #1a1a1a;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  color: #666666;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  max-width: 600px;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle::before {
+  content: '// ';
+  color: #d501ff;
+  margin-right: 8px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background: #000000;
+  border: 1px solid #1a1a1a;
+  padding: 2rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card:hover {
+  border-color: #d501ff;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.project-title::before {
+  content: '> ';
+  color: #d501ff;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.project-link {
+  color: #888888;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #1a1a1a;
+  background: #000000;
+}
+
+.project-link:hover {
+  color: #d501ff;
+  border-color: #d501ff;
+}
+
+.project-status {
+  color: #d501ff;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.project-status::before {
+  content: '> ';
+  margin-right: 4px;
+}
+
+.project-description {
+  color: #666666;
+  line-height: 1.6;
+  flex-grow: 1;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.project-description::before {
+  content: '// ';
+  color: #d501ff;
+  margin-right: 8px;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: #000000;
+  border: 1px solid #1a1a1a;
+  color: #888888;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  border-color: #d501ff;
+  color: #d501ff;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+}
+

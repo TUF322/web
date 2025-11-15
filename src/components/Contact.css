@@ -1,0 +1,155 @@
+.contact {
+  background: #000000;
+  position: relative;
+  border-top: 1px solid #1a1a1a;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-info-title::before {
+  content: '> ';
+  color: #d501ff;
+}
+
+.contact-info-text {
+  color: #666666;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.contact-info-text::before {
+  content: '// ';
+  color: #d501ff;
+  margin-right: 8px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #888888;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.contact-method svg {
+  color: #d501ff;
+  flex-shrink: 0;
+}
+
+.contact-method::before {
+  content: '$ ';
+  color: #d501ff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.form-group label::before {
+  content: '> ';
+  color: #d501ff;
+  margin-right: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #000000;
+  border: 1px solid #1a1a1a;
+  padding: 0.875rem 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: 'DotMatrix', 'Courier New', monospace;
+  transition: all 0.2s ease;
+  resize: vertical;
+  letter-spacing: 0.5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d501ff;
+  background: #000000;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #333333;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 568px) {
+  .contact-form {
+    gap: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+

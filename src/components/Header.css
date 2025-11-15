@@ -1,0 +1,96 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #000000;
+  border-bottom: 1px solid #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  border-bottom: 1px solid #d501ff;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand .brand-text {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-brand .brand-text::before {
+  content: '> ';
+  color: #d501ff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.2s ease;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.nav-links a::before {
+  content: '[';
+  color: #d501ff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-right: 4px;
+}
+
+.nav-links a::after {
+  content: ']';
+  color: #d501ff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: 4px;
+}
+
+.nav-links a:hover {
+  color: #d501ff;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-brand .brand-text {
+    font-size: 1rem;
+  }
+}
+
