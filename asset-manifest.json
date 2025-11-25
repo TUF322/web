@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.b46f3ecc.css",
-    "main.js": "/web/static/js/main.43a38c88.js",
+    "main.css": "/web/static/css/main.520148c1.css",
+    "main.js": "/web/static/js/main.65c5129f.js",
     "static/media/DOTMATRI.TTF": "/web/static/media/DOTMATRI.60986248129f8a5d7fb1.TTF",
     "index.html": "/web/index.html",
-    "main.b46f3ecc.css.map": "/web/static/css/main.b46f3ecc.css.map",
-    "main.43a38c88.js.map": "/web/static/js/main.43a38c88.js.map"
+    "main.520148c1.css.map": "/web/static/css/main.520148c1.css.map",
+    "main.65c5129f.js.map": "/web/static/js/main.65c5129f.js.map"
   },
   "entrypoints": [
-    "static/css/main.b46f3ecc.css",
-    "static/js/main.43a38c88.js"
+    "static/css/main.520148c1.css",
+    "static/js/main.65c5129f.js"
   ]
 }
