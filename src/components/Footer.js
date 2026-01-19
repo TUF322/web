@@ -8,6 +8,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-text">
+          <p className="footer-contact">
+            Feel free to reach out! Send me an email at{' '}
+            <a href="mailto:jdgdg05@gmail.com" className="footer-email">jdgdg05@gmail.com</a>
+          </p>
           <p>&copy; {currentYear} Portfolio. All rights reserved.</p>
         </div>
         <div className="footer-links">

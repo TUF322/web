@@ -18,12 +18,30 @@
   color: #666666;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .footer-text::before {
   content: '// ';
   color: #d501ff;
   margin-right: 8px;
+}
+
+.footer-contact {
+  margin-bottom: 0.5rem;
+}
+
+.footer-email {
+  color: #d501ff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-email:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .footer-links {

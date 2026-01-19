@@ -137,6 +137,64 @@
   color: #d501ff;
 }
 
+.project-collaborators {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1a1a1a;
+}
+
+.collaborators-title {
+  color: #d501ff;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.collaborators-title::before {
+  content: '> ';
+}
+
+.collaborators-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.collaborator-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #1a1a1a;
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  gap: 1rem;
+}
+
+.collaborator-item:hover {
+  border-color: #d501ff;
+  color: #d501ff;
+  background: rgba(213, 1, 255, 0.05);
+}
+
+.collaborator-name {
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.collaborator-icon {
+  color: #888888;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.collaborator-item:hover .collaborator-icon {
+  color: #d501ff;
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;

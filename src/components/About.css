@@ -37,10 +37,9 @@
 }
 
 .about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
-  align-items: start;
 }
 
 .about-text {
@@ -70,6 +69,10 @@
   flex-wrap: wrap;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.about-text .skills-section {
+  margin-top: 2rem;
 }
 
 .about-visual {
@@ -208,7 +211,6 @@
 
 @media (max-width: 968px) {
   .about-content {
-    grid-template-columns: 1fr;
     gap: 3rem;
   }
 

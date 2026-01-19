@@ -7,7 +7,7 @@ const Projects = () => {
       id: 1,
       title: 'Audio Annotation - MARE Project',
       description: 'React application for visualization, annotation and classification of marine fauna audio, developed for ARDITI MARE / MARE Project. Features advanced WaveSurfer.js integration for waveform visualization, regions, and markers. Includes dynamic annotation panel with spectrogram data and organized sidebar for events/objects/tags.',
-      technologies: ['React', 'WaveSurfer.js', 'JavaScript', 'CSS'],
+      technologies: ['React', 'WaveSurfer.js', 'JavaScript', 'UI/UX'],
       link: null,
       github: 'https://github.com/TUF322/audio_annotation'
     },
@@ -15,18 +15,26 @@ const Projects = () => {
       id: 2,
       title: 'Dario Internship - Marine Bioacoustics',
       description: 'Proof of concept developed during an internship at ARDITI MARE. React application using WaveSurfer.js for marine mammal sound analysis: waveform visualization, regions, and annotations. Custom UI with vertical bar, controls, and mockups prepared for future AI integration.',
-      technologies: ['React', 'WaveSurfer.js', 'JavaScript', 'UI/UX'],
+      technologies: ['React', 'WaveSurfer.js', 'JavaScript'],
       link: null,
       github: 'https://github.com/TUF322/Dario_Intership'
     },
     {
       id: 3,
       title: 'Domu - Property Management Platform',
-      description: 'Complete SaaS-level platform for tourism accommodation and maintenance management. Full architecture with BPMN, use cases, ER models, and UML diagrams. Backend in Laravel + MySQL, frontend in Ionic + Angular with features for owners, residents, and companies.',
-      technologies: ['Laravel', 'MySQL', 'Ionic', 'Angular', 'BPMN', 'UML'],
+      description: 'Complete SaaS-level platform for tourism accommodation and maintenance management. Full architecture with BPMN, use cases, ER models, and UML diagrams. Backend in Laravel + SQLite, frontend in Ionic + Angular with features for owners and companies.',
+      technologies: ['Laravel', 'SQLite', 'Ionic', 'Angular', 'Capacitor'],
       link: null,
       github: null,
       status: 'In Development'
+    },
+    {
+      id: 4,
+      title: 'UTask - Task Management App',
+      description: 'Mobile application developed with Ionic/Angular for task, project, and note management. Features include category management, project organization, calendar integration, notifications, and local SQLite storage. Built with Capacitor for native mobile functionality.',
+      technologies: ['Ionic', 'Angular', 'TypeScript', 'SQLite', 'Capacitor'],
+      link: null,
+      github: 'https://github.com/TUF322/UTask'
     }
   ];
 
@@ -82,6 +90,24 @@ const Projects = () => {
                 </div>
               )}
               <p className="project-description">{project.description}</p>
+              {project.id === 3 && (
+                <div className="project-collaborators">
+                  <div className="collaborators-title">Collaborators</div>
+                  <div className="collaborators-list">
+                    <a 
+                      href="https://github.com/umiguel87" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="collaborator-item"
+                    >
+                      <span className="collaborator-name">Luis Miguel</span>
+                      <svg className="collaborator-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              )}
               <div className="project-technologies">
                 {project.technologies.map((tech, index) => (
                   <span key={index} className="tech-tag">{tech}</span>

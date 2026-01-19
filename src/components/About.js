@@ -48,41 +48,23 @@ const About = () => {
               >
                 View Projects
               </button>
-              <button 
-                className="btn btn-secondary"
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Contact
-              </button>
             </div>
-            <div className="about-visual">
-              <div className="floating-card">
-                <div className="card-content">
-                  <div className="code-line"></div>
-                  <div className="code-line short"></div>
-                  <div className="code-line"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="skills-section">
-            <h3 className="skills-title">Technologies & Tools</h3>
-            <div className="skills-categories">
-              {skillCategories.map((category, categoryIndex) => (
-                <div key={categoryIndex} className="skill-category">
-                  <h4 className="category-title">{category.title}</h4>
-                  <div className="skills-grid">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex} className="skill-item">
-                        {skill}
-                      </div>
-                    ))}
+            <div className="skills-section">
+              <h3 className="skills-title">Technologies & Tools</h3>
+              <div className="skills-categories">
+                {skillCategories.map((category, categoryIndex) => (
+                  <div key={categoryIndex} className="skill-category">
+                    <h4 className="category-title">{category.title}</h4>
+                    <div className="skills-grid">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div key={skillIndex} className="skill-item">
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
