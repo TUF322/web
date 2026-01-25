@@ -35,6 +35,14 @@ const Projects = () => {
       technologies: ['Ionic', 'Angular', 'TypeScript', 'SQLite', 'Capacitor'],
       link: null,
       github: 'https://github.com/TUF322/UTask'
+    },
+    {
+      id: 5,
+      title: 'Attenda - Attendance Management Platform',
+      description: 'Sistema simples e eficaz de gestão de presenças para eventos académicos. Features incluem check-in rápido via QR code (menos de 10 segundos), sem necessidade de conta para estudantes, dashboard simples para organizadores e exportação CSV. MVP final com arquitetura completa frontend/backend.',
+      technologies: ['React', 'Node.js', 'Express', 'SQLite', 'JWT'],
+      link: null,
+      github: 'https://github.com/TUF322/Attenda'
     }
   ];
 
