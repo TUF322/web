@@ -24,6 +24,11 @@ body {
   letter-spacing: 0.5px;
 }
 
+::selection {
+  background: #d501ff;
+  color: #000000;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -40,6 +45,13 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ff00ff;
+}
+
+/* Accessible focus states, console style */
+a:focus-visible,
+button:focus-visible {
+  outline: 1px dashed #d501ff;
+  outline-offset: 3px;
 }
 
 /* Section spacing */
@@ -87,6 +99,7 @@ section {
   background: #d501ff;
   color: #000000;
   border-color: #d501ff;
+  box-shadow: 0 0 20px rgba(213, 1, 255, 0.35);
 }
 
 .btn-primary:hover::before {

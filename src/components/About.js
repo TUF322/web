@@ -1,23 +1,26 @@
 import React from 'react';
 import './About.css';
+import { useLanguage } from '../context/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: t.about.categories.frontend,
       skills: ['React.js', 'Ionic + Angular', 'HTML5 / CSS3 / SCSS', 'JavaScript', 'TypeScript']
     },
     {
-      title: 'Backend',
-      skills: ['Node.js + Express', 'Laravel (PHP)', 'APIs REST + JWT Authentication']
+      title: t.about.categories.backend,
+      skills: ['Node.js + Express', 'Laravel (PHP)', 'Django (Python)', 'REST APIs + JWT Authentication']
     },
     {
-      title: 'Databases',
+      title: t.about.categories.databases,
       skills: ['MySQL', 'SQLite']
     },
     {
-      title: 'Mobile / Hybrid',
-      skills: ['Ionic Framework', 'Angular Standalone/ngmodule']
+      title: t.about.categories.mobile,
+      skills: ['Flutter + Dart', 'Ionic Framework', 'Angular Standalone/NgModule', 'Capacitor']
     }
   ];
 
@@ -25,32 +28,26 @@ const About = () => {
     <section id="about" className="about">
       <div className="about-container">
         <div className="section-header">
-          <h2 className="section-title">About Me</h2>
+          <h2 className="section-title">{t.about.title}</h2>
           <div className="title-underline"></div>
         </div>
         <div className="about-content">
           <div className="about-text">
-            <p>
-              Developer focused on creating innovative digital solutions. Experience in scientific applications,
-              SaaS platforms, and full-stack development. Worked on marine bioacoustics projects at ARDITI MARE.
-            </p>
-            <p>
-              Welcome to my portfolio. Here you will find a selection of my projects,
-              showcasing my skills in web development and design.
-            </p>
+            <p>{t.about.p1}</p>
+            <p>{t.about.p2}</p>
             <div className="about-buttons">
-              <button 
+              <button
                 className="btn btn-primary"
                 onClick={() => {
                   const element = document.getElementById('projects');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                View Projects
+                {t.about.viewProjects}
               </button>
             </div>
             <div className="skills-section">
-              <h3 className="skills-title">Technologies & Tools</h3>
+              <h3 className="skills-title">{t.about.skillsTitle}</h3>
               <div className="skills-categories">
                 {skillCategories.map((category, categoryIndex) => (
                   <div key={categoryIndex} className="skill-category">
@@ -74,4 +71,3 @@ const About = () => {
 };
 
 export default About;
-

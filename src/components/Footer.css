@@ -64,12 +64,13 @@
 .footer-links a:hover {
   color: #d501ff;
   border-color: #d501ff;
+  box-shadow: 0 0 12px rgba(213, 1, 255, 0.15);
 }
 
 @media (max-width: 568px) {
   .footer-content {
     flex-direction: column;
     text-align: left;
+    align-items: flex-start;
   }
 }
-

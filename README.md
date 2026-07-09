@@ -1,110 +1,106 @@
 # Portfolio Web
 
-Portfolio pessoal criado com React para exibir seus projetos e habilidades.
+Personal portfolio built with React — a terminal-inspired, dot-matrix themed site showcasing my projects and skills.
 
-## 🚀 Como Usar
+**Live:** [https://TUF322.github.io/web](https://TUF322.github.io/web)
 
-### Instalação
+## 🚀 Getting Started
+
+### Install
 
 ```bash
 npm install
 ```
 
-### Executar em Desenvolvimento
+### Run in Development
 
 ```bash
 npm start
 ```
 
-A aplicação estará disponível em [http://localhost:3000](http://localhost:3000)
+The app will be available at [http://localhost:3000](http://localhost:3000)
 
-### Build para Produção
+### Production Build
 
 ```bash
 npm run build
 ```
 
-### Deploy para GitHub Pages
+### Deploy to GitHub Pages
 
-1. **Instalar dependências de deploy:**
-```bash
-npm install
-```
-
-2. **Configurar o repositório no GitHub:**
-   - Crie um repositório no GitHub (ex: `web` ou `portfolio`)
-   - Se o nome do repositório for diferente de `web`, atualize o campo `homepage` no `package.json`
-
-3. **Fazer deploy:**
 ```bash
 npm run deploy
 ```
 
-Isso irá:
-- Fazer o build do projeto
-- Criar/atualizar o branch `gh-pages` no GitHub
-- Publicar o site em `https://TUF322.github.io/web`
+This will:
+- Build the project
+- Create/update the `gh-pages` branch on GitHub
+- Publish the site at `https://TUF322.github.io/web`
 
-**Nota:** Se o nome do repositório for diferente, atualize a URL no campo `homepage` do `package.json` antes de fazer o deploy.
+**Note:** If the repository name changes, update the `homepage` field in `package.json` before deploying.
 
-## 📝 Personalização
+## 🌐 Languages
 
-### Adicionar Seus Projetos
+The site supports **English** and **Portuguese**, switchable from the header. All copy lives in `src/context/LanguageContext.js` — edit the `translations` object to change any text in either language. The selected language is persisted in `localStorage`.
 
-Edite o arquivo `src/components/Projects.js` e modifique o array `projects` com seus próprios projetos:
+## 📝 Customization
+
+### Projects
+
+Edit `src/components/Projects.js` and modify the `projects` array (technologies, links, flags like `featured` or `inDevelopment`). Titles and descriptions live in `LanguageContext.js` under `projects.items`.
 
 ```javascript
 const projects = [
   {
-    id: 1,
-    title: 'Nome do Projeto',
-    description: 'Descrição do projeto...',
+    key: 'myproject', // matches projects.items.myproject in LanguageContext.js
     technologies: ['React', 'CSS', 'JavaScript'],
-    link: 'https://seu-projeto.com',
-    github: 'https://github.com/seu-usuario/projeto'
-  },
-  // Adicione mais projetos aqui
+    link: 'https://my-project.com',
+    github: 'https://github.com/user/project',
+    featured: true
+  }
 ];
 ```
 
-### Personalizar Informações Pessoais
+### Personal Info
 
-- **Hero Section**: Edite `src/components/Hero.js`
-- **Sobre Mim**: Edite `src/components/About.js`
-- **Habilidades**: Modifique o array `skills` em `src/components/About.js`
-- **Contacto**: Atualize o email em `src/components/Contact.js` e configure o backend para o formulário
+- **Hero section**: `src/components/Hero.js` (typing animation + terminal window)
+- **About me**: `src/components/About.js` (skills arrays) and `LanguageContext.js` (bio text)
+- **Contact**: `src/components/Contact.js` — static contact cards (email, GitHub, LinkedIn); no backend needed
 
-### Cores e Estilos
+### Colors & Styles
 
-Os estilos principais estão nos arquivos CSS de cada componente. A paleta de cores principal usa:
-- Gradiente: `#667eea` → `#764ba2`
-- Fundo: `#0a0a0a`
-- Texto: `#e0e0e0`
+Each component has its own CSS file. The palette:
+- Accent: `#d501ff` (magenta)
+- Background: `#000000`
+- Font: DotMatrix (`src/fonts/DOTMATRI.TTF`), falling back to Courier New
 
-## 📁 Estrutura
+## 📁 Structure
 
 ```
 src/
 ├── components/
-│   ├── Header.js       # Navegação
-│   ├── Hero.js         # Seção inicial
-│   ├── About.js        # Sobre mim
-│   ├── Projects.js     # Projetos
-│   ├── Contact.js      # Formulário de contacto
-│   └── Footer.js       # Rodapé
+│   ├── Header.js       # Navigation + language switch
+│   ├── Hero.js         # Intro with typing animation and terminal window
+│   ├── About.js        # About me + skills
+│   ├── Projects.js     # Project cards
+│   ├── Contact.js      # Contact cards (email, GitHub, LinkedIn)
+│   └── Footer.js       # Footer
+├── context/
+│   └── LanguageContext.js  # EN/PT translations + language state
 ├── App.js
 └── index.js
 ```
 
-## 🎨 Características
+## 🎨 Features
 
-- ✅ Design moderno e responsivo
-- ✅ Animações suaves
-- ✅ Navegação suave entre seções
-- ✅ Formulário de contacto
-- ✅ Suporte a links de projetos e GitHub
-- ✅ Otimizado para mobile
+- ✅ Terminal / dot-matrix retro design
+- ✅ English & Portuguese with persistent language switch
+- ✅ Typing animation in the hero section
+- ✅ Smooth scrolling between sections
+- ✅ Static contact section (no backend required)
+- ✅ Responsive and mobile-friendly
+- ✅ Deployed on GitHub Pages
 
-## 📄 Licença
+## 📄 License
 
-Este projeto é pessoal e livre para uso e modificação.
+This is a personal project, free to use and modify.

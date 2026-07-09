@@ -37,11 +37,50 @@
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  position: relative;
 }
 
 .project-card:hover {
   border-color: #d501ff;
+  box-shadow: 0 0 30px rgba(213, 1, 255, 0.08);
+}
+
+.project-card.featured {
+  border-color: #333333;
+  background: linear-gradient(135deg, rgba(213, 1, 255, 0.04) 0%, #000000 40%);
+}
+
+.project-card.featured:hover {
+  border-color: #d501ff;
+}
+
+.project-index {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #444444;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.featured-tag {
+  color: #d501ff;
+  border: 1px solid #d501ff;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  animation: featuredPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes featuredPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(213, 1, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(213, 1, 255, 0.35);
+  }
 }
 
 .project-header {
@@ -89,16 +128,24 @@
 }
 
 .project-status {
-  color: #d501ff;
+  color: #00ff9d;
   font-size: 0.75rem;
-  margin-bottom: 0.75rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .project-status::before {
-  content: '> ';
-  margin-right: 4px;
+  content: '● ';
+  animation: statusBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes statusBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
 }
 
 .project-description {
@@ -113,6 +160,31 @@
   content: '// ';
   color: #d501ff;
   margin-right: 8px;
+}
+
+.project-apps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.app-chip {
+  border: 1px dashed #333333;
+  color: #888888;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.app-chip::before {
+  content: '+ ';
+  color: #d501ff;
+}
+
+.app-chip:hover {
+  border-color: #d501ff;
+  color: #ffffff;
 }
 
 .project-technologies {
@@ -189,6 +261,8 @@
   color: #888888;
   transition: color 0.2s ease;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .collaborator-item:hover .collaborator-icon {
@@ -204,4 +278,3 @@
     padding: 1.5rem;
   }
 }
-

@@ -10,6 +10,17 @@
   background: #000000;
 }
 
+/* Subtle dot grid backdrop — matches the dot-matrix identity */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .hero-content {
   max-width: 1200px;
   width: 100%;
@@ -21,46 +32,12 @@
   position: relative;
 }
 
-@media (max-width: 968px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .vscode-window {
-    max-width: 100%;
-  }
-}
-
 .hero-text {
   animation: fadeInUp 0.8s ease-out;
 }
 
-.hero-title {
-  font-size: 3rem;
-  font-weight: normal;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
-
-.hero-title::before {
-  content: '> ';
-  color: #d501ff;
-}
-
-.gradient-text {
-  color: #d501ff;
-}
-
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #888888;
   margin-bottom: 1rem;
   font-weight: normal;
@@ -72,6 +49,43 @@
   color: #d501ff;
 }
 
+.hero-title {
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  min-height: 2.4em;
+}
+
+.hero-title::before {
+  content: '> ';
+  color: #d501ff;
+}
+
+.gradient-text {
+  color: #d501ff;
+}
+
+.typing-cursor {
+  color: #d501ff;
+  font-weight: normal;
+}
+
+.typing-cursor.blink {
+  animation: blinkCursor 1s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .hero-description {
   font-size: 0.95rem;
   color: #666666;
@@ -81,69 +95,15 @@
   letter-spacing: 0.5px;
 }
 
+.hero-description::before {
+  content: '// ';
+  color: #d501ff;
+}
+
 .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-.btn {
-  padding: 12px 24px;
-  font-size: 0.9rem;
-  font-weight: normal;
-  border: 1px solid #ffffff;
-  background: transparent;
-  color: #ffffff;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-block;
-  font-family: 'DotMatrix', 'Courier New', monospace;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: relative;
-}
-
-.btn::before {
-  content: '> ';
-  color: #d501ff;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.btn-primary {
-  border-color: #d501ff;
-  color: #d501ff;
-}
-
-.btn-primary::before {
-  opacity: 1;
-}
-
-.btn-primary:hover {
-  background: #d501ff;
-  color: #000000;
-  border-color: #d501ff;
-}
-
-.btn-primary:hover::before {
-  color: #000000;
-}
-
-.btn-secondary {
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
-.btn-secondary:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
-}
-
-.btn-secondary:hover::before {
-  opacity: 1;
-  color: #000000;
 }
 
 .hero-visual {
@@ -153,91 +113,109 @@
   animation: fadeInRight 0.8s ease-out;
 }
 
-.vscode-window {
-  background: #1e1e1e;
-  border: 1px solid #3c3c3c;
-  border-radius: 7px;
+/* Terminal window */
+.terminal-window {
+  background: #050505;
+  border: 1px solid #1a1a1a;
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   font-family: 'DotMatrix', 'Courier New', monospace;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 40px rgba(213, 1, 255, 0.08), 0 4px 20px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.vscode-titlebar {
-  background: #2d2d2d;
-  border-bottom: 1px solid #3c3c3c;
+.terminal-window:hover {
+  border-color: #d501ff;
+  box-shadow: 0 0 60px rgba(213, 1, 255, 0.15), 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-titlebar {
+  background: #0a0a0a;
+  border-bottom: 1px solid #1a1a1a;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.vscode-buttons {
+.terminal-buttons {
   display: flex;
   gap: 0.5rem;
 }
 
-.vscode-button {
-  width: 12px;
-  height: 12px;
+.terminal-button {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
+  border: 1px solid #333333;
+  background: transparent;
 }
 
-.vscode-button.close {
-  background: #ff5f56;
+.terminal-button.close {
+  border-color: #d501ff;
 }
 
-.vscode-button.minimize {
-  background: #ffbd2e;
+.terminal-button.minimize {
+  border-color: #666666;
 }
 
-.vscode-button.maximize {
-  background: #27c93f;
+.terminal-button.maximize {
+  border-color: #666666;
 }
 
-.vscode-title {
-  color: #cccccc;
-  font-size: 0.85rem;
+.terminal-title {
+  color: #666666;
+  font-size: 0.8rem;
   letter-spacing: 0.5px;
 }
 
-.vscode-content {
+.terminal-content {
   padding: 1.5rem;
-  background: #1e1e1e;
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.vscode-line {
+.terminal-line {
   color: #d4d4d4;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   letter-spacing: 0.5px;
+  word-break: break-word;
 }
 
-.vscode-line.indent {
-  padding-left: 2rem;
+.terminal-line.indent {
+  padding-left: 1.5rem;
 }
 
-.vscode-keyword {
-  color: #569cd6;
-}
-
-.vscode-variable {
-  color: #9cdcfe;
-}
-
-.vscode-property {
-  color: #9cdcfe;
-}
-
-.vscode-string {
-  color: #ce9178;
-}
-
-.vscode-line:last-child {
+.terminal-line:last-child {
   margin-bottom: 0;
+}
+
+.terminal-prompt {
+  color: #d501ff;
+}
+
+.terminal-cmd {
+  color: #ffffff;
+}
+
+.terminal-key {
+  color: #888888;
+}
+
+.terminal-string {
+  color: #ffffff;
+}
+
+.terminal-status {
+  color: #00ff9d;
+}
+
+.terminal-cursor {
+  color: #d501ff;
+  animation: blinkCursor 1s step-end infinite;
+  font-size: 0.85em;
 }
 
 .scroll-indicator {
@@ -250,6 +228,7 @@
   font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+  z-index: 1;
 }
 
 .scroll-indicator::before {
@@ -289,18 +268,29 @@
   }
 }
 
-@media (max-width: 568px) {
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: left;
+  }
+
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
-  .vscode-window {
+  .terminal-window {
     max-width: 100%;
-  }
-
-  .vscode-content {
-    padding: 1rem;
-    font-size: 0.8rem;
   }
 }
 
+@media (max-width: 568px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .terminal-content {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+}
